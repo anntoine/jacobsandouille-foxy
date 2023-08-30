@@ -72,7 +72,7 @@ async function handler(requestEvent) {
         }),
       ), Promise.resolve(values),
     );
-    console.log('Validating values: ' + values);
+    console.log('Validating values: ' + JSON.stringify(values));
     let failed = findMismatch(values);
     if (!failed) {
       const outOfStock = outOfStockItems(values);
@@ -276,7 +276,7 @@ function isPriceCorrect(comparable) {
   ) {
     return true;
   } else {
-    console.log('Cart item price = ' + parseFloat(fxItem.price) + 'vs Webflow item price = ' + parseFloat(iGet(wfItem, getCustomKey('price'))));
+    console.log('Cart item price = ' + parseFloat(fxItem.price) + ' vs Webflow item price = ' + parseFloat(iGet(wfItem, getCustomKey('price'))));
     return parseFloat(fxItem.price) === parseFloat(iGet(wfItem, getCustomKey('price')));
   }
 }
