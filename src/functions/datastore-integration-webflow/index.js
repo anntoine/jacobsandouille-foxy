@@ -276,6 +276,7 @@ function isPriceCorrect(comparable) {
   ) {
     return true;
   } else {
+    console.log('Cart item price = ' + parseFloat(fxItem.price) + 'vs Webflow item price = ' + parseFloat(iGet(wfItem, getCustomKey('price'))));
     return parseFloat(fxItem.price) === parseFloat(iGet(wfItem, getCustomKey('price')));
   }
 }
