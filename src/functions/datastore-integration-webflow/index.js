@@ -25,7 +25,7 @@ function customOptions() {
       updateinfo: config.datastore.skipValidation.updateinfo || 'Update Your Customer Information',
     },
     webflow: {
-      limit: 200,
+      limit: 100,
     },
   }
 }
