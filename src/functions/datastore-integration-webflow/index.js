@@ -72,7 +72,7 @@ async function handler(requestEvent) {
         }),
       ), Promise.resolve(values),
     );
-    console.log('Validating values: ' + JSON.stringify(values));
+    // console.log('Validating values: ' + JSON.stringify(values));
     let failed = findMismatch(values);
     if (!failed) {
       const outOfStock = outOfStockItems(values);
