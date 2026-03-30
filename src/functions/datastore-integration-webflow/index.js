@@ -513,7 +513,8 @@ function outOfStockItems(values) {
  */
 function iGet(object, key) {
   const objectData = object && object.fieldData ? object.fieldData : object;
-  const numbered = new RegExp(key.toLowerCase().trim()+'(-\\d+)?');
+  const numbered = new RegExp('^' + key.toLowerCase().trim()+'(-\\d+)?$'); // grab the correct 'online-price' suggested by Claude 
+  // const numbered = new RegExp(key.toLowerCase().trim()+'(-\\d+)?');
   const existingKey = Object.keys(objectData)
     .filter((k) => k.toLowerCase().trim().match(numbered))
     .sort();
